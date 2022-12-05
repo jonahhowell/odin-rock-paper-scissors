@@ -1,0 +1,1 @@
+Odin Project assignment 3: Making a rock paper scissors console game with JavaScript.
