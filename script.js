@@ -25,6 +25,13 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerChoice = formatString(prompt("Enter (rock|paper|scissors)"));
+        console.log(playRound(playerChoice, getComputerChoice()));
+    }
+}
+
 function winText(player, computer) {
     return "You win! " + player + " beats " + computer + "!";
 }
@@ -40,4 +47,4 @@ function formatString(str) {
     return firstC + remainder;
 }
 
-console.log(playRound(getComputerChoice(), getComputerChoice()));
+game();
