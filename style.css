@@ -5,6 +5,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: "Roboto";
+}
+
+.display {
+    font-size: 80px;
 }
 
 .playerchoice {

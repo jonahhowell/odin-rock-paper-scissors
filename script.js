@@ -35,7 +35,7 @@ function winText(player, computer) {
 }
 
 function loseText(player, computer) {
-    return "You lose! " + computer + " beats " + player + "!";
+    return "You lose! " + player + " is beaten by " + computer + "!";
 }
 
 function formatString(str) {
@@ -48,5 +48,6 @@ function formatString(str) {
 const choices = document.querySelectorAll(".choice");
 choices.forEach(choice => choice.addEventListener('click', (e) => {
     const playerSelection = choice.getAttribute('data-selection');
-    console.log(playRound(playerSelection, getComputerChoice()));
+    const roundResult = playRound(playerSelection, getComputerChoice());
+    document.getElementById('display').textContent = roundResult;
 }));
