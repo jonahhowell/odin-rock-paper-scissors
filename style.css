@@ -1,0 +1,28 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerchoice {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 200px;
+}
+
+.choice {
+    font-family: "Roboto";
+    font-size: 30px;
+    color: white;
+    background-color: rgb(62, 62, 249);
+    padding: 10px;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+}
