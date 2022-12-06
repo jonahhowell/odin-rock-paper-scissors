@@ -46,5 +46,3 @@ function formatString(str) {
     remainder = str.slice(1, str.length).toLowerCase();
     return firstC + remainder;
 }
-
-game();
