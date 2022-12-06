@@ -8,20 +8,18 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     playerSelection = formatString(playerSelection);
     computerSelection = formatString(computerSelection);
+    if (playerSelection === computerSelection) return "Tie!";
     if (playerSelection === 'Rock') {
         if (computerSelection === 'Scissors') return winText(playerSelection, computerSelection);
-        if (computerSelection === 'Paper') return loseText(playerSelection, computerSelection);
-        return 'Tie!';
+        return loseText(playerSelection, computerSelection);
     }
     if (playerSelection === 'Paper') {
         if (computerSelection === 'Rock') return winText(playerSelection, computerSelection);
-        if (computerSelection === 'Scissors') return loseText(playerSelection, computerSelection);
-        return 'Tie!';
+        return loseText(playerSelection, computerSelection);
     }
     if (playerSelection === 'Scissors') {
         if (computerSelection === 'Paper') return winText(playerSelection, computerSelection);
-        if (computerSelection === 'Rock') return loseText(playerSelection, computerSelection);
-        return 'Tie!';
+        return loseText(playerSelection, computerSelection);
     }
 }
 
@@ -46,3 +44,9 @@ function formatString(str) {
     remainder = str.slice(1, str.length).toLowerCase();
     return firstC + remainder;
 }
+
+const choices = document.querySelectorAll(".choice");
+choices.forEach(choice => choice.addEventListener('click', (e) => {
+    const playerSelection = choice.getAttribute('data-selection');
+    console.log(playRound(playerSelection, getComputerChoice()));
+}));
