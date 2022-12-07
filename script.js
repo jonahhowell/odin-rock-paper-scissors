@@ -8,19 +8,11 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     playerSelection = formatString(playerSelection);
     computerSelection = formatString(computerSelection);
-    if (playerSelection === computerSelection) return "Tie!";
-    if (playerSelection === 'Rock') {
-        if (computerSelection === 'Scissors') return winText(playerSelection, computerSelection);
-        return loseText(playerSelection, computerSelection);
-    }
-    if (playerSelection === 'Paper') {
-        if (computerSelection === 'Rock') return winText(playerSelection, computerSelection);
-        return loseText(playerSelection, computerSelection);
-    }
-    if (playerSelection === 'Scissors') {
-        if (computerSelection === 'Paper') return winText(playerSelection, computerSelection);
-        return loseText(playerSelection, computerSelection);
-    }
+    const status = matchResult(playerSelection, computerSelection);
+    if (status === 'tie') return "Tie!";
+    if (status === 'win') return "You win! " + playerSelection + 
+                                 " beats " + computerSelection;
+    return "You lose! " + playerSelection + " is beaten by " + computerSelection;
 }
 
 function game() {
@@ -36,6 +28,23 @@ function winText(player, computer) {
 
 function loseText(player, computer) {
     return "You lose! " + player + " is beaten by " + computer + "!";
+}
+
+function matchResult(player, computer) {
+    if (player === computer) return 'tie';
+    if (player === 'Rock') {
+        if (computer === 'Scissors') return 'win';
+        return 'lose';
+    }
+    if (player === 'Paper') {
+        if (computer === 'Rock') return 'win';
+        return 'lose';
+    }
+    if (player === 'Scissors') {
+        if (computer === 'Paper') return 'win';
+        return 'lose';
+    }
+    return 'lose';
 }
 
 function formatString(str) {

@@ -13,7 +13,6 @@ body {
 }
 
 .playerchoice {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,4 +29,5 @@ body {
     border-radius: 8px;
     width: 200px;
     text-align: center;
+    cursor: pointer;
 }
