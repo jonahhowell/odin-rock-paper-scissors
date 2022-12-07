@@ -9,10 +9,7 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = formatString(playerSelection);
     computerSelection = formatString(computerSelection);
     const status = matchResult(playerSelection, computerSelection);
-    if (status === 'tie') return "Tie!";
-    if (status === 'win') return "You win! " + playerSelection + 
-                                 " beats " + computerSelection;
-    return "You lose! " + playerSelection + " is beaten by " + computerSelection;
+    return resultToString(playerSelection, computerSelection, status);
 }
 
 function game() {
@@ -45,6 +42,13 @@ function matchResult(player, computer) {
         return 'lose';
     }
     return 'lose';
+}
+
+function resultToString(playerSelection, computerSelection, status) {
+    if (status === 'tie') return "Tie!";
+    if (status === 'win') return "You win! " + playerSelection + 
+                                 " beats " + computerSelection;
+    return "You lose! " + playerSelection + " is beaten by " + computerSelection;
 }
 
 function formatString(str) {
