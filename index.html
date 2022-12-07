@@ -9,12 +9,19 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div id="display">Display!</div>
+    <div id="display">Click to play! First to 5 wins!</div>
+    <div id="scoreboard">
+        <div id="playerscore">0</div>
+        <div id="separator"></div>
+        <div id="computerscore">0</div>
+    </div>
     <div class="playerchoice">
         <div class="choice" data-selection="Rock">Rock &#129704;</div>
         <div class="choice" data-selection="Paper">Paper &#128221;</div>
         <div class="choice" data-selection="Scissors">Scissors &#9986;</div>
     </div>
+    <div id="victorytext" class="resulttext">You win!</div>
+    <div id="losetext" class="resulttext">You lose!</div>
     <script src="script.js"></script>
 </body>
 </html>

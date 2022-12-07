@@ -8,8 +8,9 @@ body {
     font-family: "Roboto";
 }
 
-.display {
+#display {
     font-size: 80px;
+    margin-bottom: 20px;
 }
 
 .playerchoice {
@@ -17,7 +18,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    margin-top: 200px;
+    margin-bottom: 60px;
 }
 
 .choice {
@@ -30,4 +31,25 @@ body {
     width: 200px;
     text-align: center;
     cursor: pointer;
+}
+
+#scoreboard {
+    display: flex;
+    font-size: 100px;
+    gap: 50px;
+    margin-bottom: 100px;
+}
+
+#scoreboard * {
+    text-align: center;
+}
+
+#separator {
+    width: 0px;
+    border: 2px solid black;
+}
+
+.resulttext {
+    display: none;
+    font-size: 50px;
 }

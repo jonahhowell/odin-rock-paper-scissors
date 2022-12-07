@@ -58,9 +58,26 @@ function formatString(str) {
     return firstC + remainder;
 }
 
+const score = [0, 0];
+
 const choices = document.querySelectorAll(".choice");
 choices.forEach(choice => choice.addEventListener('click', (e) => {
+    if ((score[0] >= 5) || (score[1] >= 5)) return;
     const playerSelection = choice.getAttribute('data-selection');
-    const roundResult = playRound(playerSelection, getComputerChoice());
-    document.getElementById('display').textContent = roundResult;
+    const computerSelection = getComputerChoice();
+    const status = matchResult(playerSelection, computerSelection);
+    const roundText = resultToString(playerSelection, computerSelection, status);
+    document.getElementById('display').textContent = roundText;
+    if (status === 'win') {
+        document.getElementById('playerscore').textContent = ++score[0];
+        if (score[0] == 5) {
+            document.getElementById('victorytext').style.display = 'block';
+        }
+    }
+    else if (status === 'lose') {
+        document.getElementById('computerscore').textContent = ++score[1];
+        if (score[1] == 5) {
+            document.getElementById('losetext').style.display = 'block';
+        }
+    }
 }));
